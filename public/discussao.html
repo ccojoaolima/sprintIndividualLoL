@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="basicos.css">
+    <link rel="stylesheet" href="discussao.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js%22%3E"></script>
+
+    <title>Document</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <a href="#" class="logo"><img src="../sources/logo1.png" alt=""></a>
+        <div class="container">
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="basicos.html">Básicos</a></li>
+            <li><a href="discussao.html">Discussão</a></li>
+            <li><a href="news.html">News!</a></li>
+            <li><a href="about.html">Sobre nós</a></li>
+            <li><a href="stats.html">Estatísticas</a></li>
+            <li><a href="login.html">Login/Cadastro</a></li>
+          </ul>
+        </div>
+    </header>
+    <div class="divEnglobatopico">
+      <div class="topico">
+        <img src="../sources/idahotb-icon.png" alt="">
+          Interaja com X pessoas <br>
+        já cadastradas na ilha!</div>
+      <div class="topico">
+        <img src="../campeoes/teemo.jpg" alt="">
+        E dessas - y% são jogadores <br>
+      irritantes de teemo!</div>
+      <div class="topico">
+        <div class="grafico">
+          <canvas id="myChart"></canvas>
+        </div> <br>
+        dolor</div>
+    </div>
+
+   <div class="bannerDiscussao">
+     <div class="txtBanner">
+     <h3 class="bannerH3">Discussão pacífica!  <br>Aqui temos discussões variadas - e possivelmente civis.</h3>
+      <a href="discussaoChallenger.html">- Aprenda com os melhores!</a> <br>
+      <a href="discussaoOTP.html">- Fogueira dos OTPs</a>
+     </div>
+   </div> <br>
+   <div class="fraseChampion">
+    "A bebida só é um problema quando a caneca está vazia!" - Gragas
+</div>
+
+
+
+  <div class="divEnglobaDiscussoes">
+    <div class="disc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus nihil earum odio magni nesciunt dicta autem? Libero praesentium inventore rem cumque dolore voluptates dicta rerum, ex illum, ut exercitationem. Maxime?</div><br>
+    <div class="disc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos animi alias accusamus est ab facilis pariatur quisquam, beatae excepturi voluptatibus distinctio nulla asperiores? Magni porro nisi, explicabo quod numquam animi!</div> <br>
+    <div class="disc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium sint velit sequi quo porro totam blanditiis in laboriosam labore consequatur hic quasi, rem harum soluta fugit architecto autem officia iure!</div><br>
+    <div class="disc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus nihil earum odio magni nesciunt dicta autem? Libero praesentium inventore rem cumque dolore voluptates dicta rerum, ex illum, ut exercitationem. Maxime?</div><br>
+    <div class="disc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos animi alias accusamus est ab facilis pariatur quisquam, beatae excepturi voluptatibus distinctio nulla asperiores? Magni porro nisi, explicabo quod numquam animi!</div> <br>
+    <div class="disc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium sint velit sequi quo porro totam blanditiis in laboriosam labore consequatur hic quasi, rem harum soluta fugit architecto autem officia iure!</div><br>
+  </div> 
+    
+
+  <div class="footer">
+    <div class="footerContainer">
+        <h4>(2021) Ilha do top - De um toplaner para outro.</h4> <br>
+        <img src="../sources/logo1.png" alt="">
+    </div>
+</div>
+
+</body>
+</html>
+
+<script>
+  var ctx = document.getElementById('myChart');
+var meuGrafico = new Chart(ctx, {
+  type: 'doughnut',
+  data: {
+  labels: [
+    'Red',
+    'Blue',
+    'Yellow'
+  ],
+  datasets: [{
+    label: 'My First Dataset',
+    data: [300, 50, 100],
+    backgroundColor: [
+      'rgb(255, 99, 132)',
+      'rgb(54, 162, 235)',
+      'rgb(255, 205, 86)'
+    ],
+    hoverOffset: 4
+  }]
+}
+})
+
+  
+
+</script>

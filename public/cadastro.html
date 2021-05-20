@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="basicos.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <a href="#" class="logo"><img src="../sources/logo1.png" alt=""></a>
+        <div class="container">
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="basicos.html">Básicos</a></li>
+            <li><a href="discussao.html">Discussão</a></li>
+            <li><a href="news.html">News!</a></li>
+            <li><a href="about.html">Sobre nós</a></li>
+            <li><a href="stats.html">Estatísticas</a></li>
+            <li><a href="login.html">Login/Cadastro</a></li>
+          </ul>
+        </div>
+    </header>
+
+    <div class="divCad" style="float: left;">
+      <div class="container">
+          <h1>Caiu de paraquedas ou veio nadando? <br> Não importa! Seja muito bem-vindo(a)!</h1>
+          <div class="formulario">
+              <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                  Digite seu nome:
+                  <input type="text" name="nome" class="input-padrao" autofocus="autofocus" placeholder="Fulano de Tal"> <br>
+                  Insira seu sexo:
+                  <input type="text" name="login" class="input-padrao" placeholder="'M' 'F' ou 'N' " required maxlength="4">  <br>
+                  Insira o Nome de Invocador:
+                  <input type="text" name="login" class="input-padrao" placeholder="XxReidotop123xX" required maxlength="16"> <br>  <br>
+                     
+                  Insira o seu primeiro campeão mais jogado do top:
+                  <input type="text" name="login" class="input-padrao" placeholder="darius" > 
+                  Sua maestria?
+                  <input type="text" name="login" class="input-padrao" placeholder="144k" > <br> 
+                  Voce se considera OTP?
+                  <input type="text" name="login" class="input-padrao" placeholder="'S' ou 'N' " required maxlength="4"> <br><br>
+
+                  Insira o seu segundo campeão mais jogado do top:
+                  <input type="text" name="login" class="input-padrao" placeholder="mordekaiser" > 
+                  Sua maestria?
+                  <input type="text" name="login" class="input-padrao" placeholder="90k" > <br> 
+                  Insira o seu terceiro campeão mais jogado do top:
+                  <input type="text" name="login" class="input-padrao" placeholder="nasus" > 
+                  Sua maestria?
+                  <input type="text" name="login" class="input-padrao" placeholder="90k" > <br> <br>
+
+                  Senha
+                  <input type="password" name="senha" class="input-padrao" placeholder="***************"> <br>
+                  <input type="submit" id="btn_entrar" value="Cadastrar" class="btn-green"> <br>
+                  
+              </form>
+              Já tem uma conta? <a href="login.html"><button>Log1n</button></a>
+              <img src="aguarde-orange.gif" id="img_aguarde" style="display: none; width:100px">
+  
+  <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+      Erro no cadastro
+  </div>
+
+</div>
+          <div class="imagem-lateral">
+              <img src="img/side-img-contato_orange.jpg">
+          </div>
+      </div>
+  </div>
+
+  
+
+
+
+
+
+
+
+</body>
+</html>
+
+<script>
+let login_usuario;
+let nome_usuario;
+
+function redirecionar_login() {
+    window.location.href = 'login.html';
+}
+
+function verificar_autenticacao() {
+    login_usuario = sessionStorage.login_usuario_meuapp;
+    nome_usuario = sessionStorage.nome_usuario_meuapp;
+    
+    if (login_usuario == undefined)  {
+        redirecionar_login();
+    } else {
+        b_usuario.innerHTML = nome_usuario;
+        validar_sessao();
+    }
+    
+}
+
+function logoff() {
+    finalizar_sessao();
+    sessionStorage.clear();
+    redirecionar_login();
+}
+
+function validar_sessao() {
+    fetch(`/usuarios/sessao/${login_usuario}`, {cache:'no-store'})
+    .then(resposta => {
+        if (resposta.ok) {
+            resposta.text().then(texto => {
+                console.log('Sessão :) ', texto);    
+            });
+        } else {
+            console.error('Sessão :.( ');
+            logoff();
+        } 
+    });    
+}
+
+function finalizar_sessao() {
+    fetch(`/usuarios/sair/${login_usuario}`, {cache:'no-store'}); 
+}
+
+
+
+</script>

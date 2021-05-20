@@ -1,0 +1,134 @@
+
+
+/*inicio banner*/
+.divBannerSobre {
+    display: flex;
+    width: 100%;
+    background-color: blue;
+    justify-content: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 0%;
+    margin-right: 0%;
+    background-image: url('../proPS/poolpezinho.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    opacity: 0.5;
+
+    
+}
+.divBannerSobre img{
+    max-width: 100%;
+  height: auto;
+
+}
+
+.divBannerSobre h1{
+    display: flex;
+    font-size: 101px;
+    font-family: 'Amatic SC';
+    opacity: 1;
+
+} 
+.divBannerSobre h3{
+    /*background-color: red ;*/
+    display: flex;
+    flex-direction: row;
+}
+.divBannerSobre a{
+    text-decoration: none;
+}
+
+
+
+/*fim banner*/
+
+/* Início do descrição do produto */
+
+.pro-produto {
+    width: 100%;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../proPS/fundoLee3.png');
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 110;
+    
+  }
+  .pro-produto2 {
+    width: 100%;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../proPS/sand.jpg');
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 110;
+    
+  }
+
+  
+  .pro-container1 {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: -110;
+  
+  }
+  
+  .glass {
+    width: 80%;
+    height: 600px;
+    background: rgba(225, 225, 225, 0.1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    /*background-image: url('../sources/wood.png'); */
+  
+   
+
+  }
+  
+  .pro-container {
+    width: 100%;
+    height: 350px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+  }
+  .pro-container1 p{
+    /*background-color: white;*/
+    margin: 50px;
+    border-radius: 10px;
+  }
+  
+
+ /*Fim do descrição do produto*/
+
+ .divExplicacao{
+   display: flex;
+   align-items: flex-start;
+   background-color: #f8f7de;
+   margin-right: 2%;
+   border-radius: 10px;
+ }

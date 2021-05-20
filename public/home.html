@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css" />
+    <title>Document</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <a href="#" class="logo"><img src="../sources/logo1.png" alt=""></a>
+        <div class="container">
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="basicos.html">Básicos</a></li>
+            <li><a href="discussao.html">Discussão</a></li>
+            <li><a href="stats.html">Estatísticas</a></li>
+            <li><a href="news.html">News!</a></li>
+            <li><a href="about.html">Sobre nós</a></li>
+            <li><a href="login.html">Login/Cadastro</a></li>
+          </ul>
+        </div>
+    </header>
+
+<div class="divLorem" style="float: left; ">
+    <div class="divH1">
+        <h1>
+            Bem-Vindo a Ilha!
+        </h1>
+    </div>
+</div>
+
+<div class="divDiscussao" style="float: left;">
+    <div class="espacoQues">
+        <div class="divQues1">
+           <a href=""><img src="../sources/enquete.jpg" alt="">  </a> <figcaption>Vote na enquete.</figcaption> 
+        </div>
+         <div class="divQues1">
+            <a href=""><img src="../sources/idahotb-icon.png" alt=""> </a>   <figcaption>Evento LGBTQIA+ da ilha!.</figcaption> 
+         </div>
+             <div class="divQues1">
+                <a href=""><img src="../sources/challenger.png" alt=""> </a>   <figcaption>Aprenda com os melhores!</figcaption> 
+             </div>
+    </div>
+   <br>
+   <h2>
+      O site definitivo da toplane - e dos toplaners! <br>
+   </h2> <br>
+    <h3>
+        Reis do top:
+    </h3> <br>
+    <div class="divReis"> 
+        <h3>Usuario 1</h3> <br>
+        <h3>Usuario 2</h3> <br>
+        <h3>Usuario 3</h3>
+    </div>
+   </div>
+ 
+</div>
+
+
+<div class="divImgs" style="float: right;">
+    <img class="mySlides" src="../sources/ornn.gif">
+    <img class="mySlides" src="../sources/sionMinion.gif">
+    <img class="mySlides" src="../sources/nasus.gif">
+</div>
+<br>
+</div>
+
+
+
+</body>
+</html>
+<script>
+var slideIndex = 0;
+carousel();
+
+function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
+  x[slideIndex-1].style.display = "block";
+  setTimeout(carousel, 4000); 
+  }
+</script>

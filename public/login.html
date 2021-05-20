@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="basicos.css">
+    <link rel="stylesheet" href="login.css">
+    <title>Document</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <a href="#" class="logo"><img src="../sources/logo1.png" alt=""></a>
+        <div class="container">
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="basicos.html">Básicos</a></li>
+            <li><a href="discussao.html">Discussão</a></li>
+            <li><a href="news.html">News!</a></li>
+            <li><a href="about.html">Sobre nós</a></li>
+            <li><a href="stats.html">Estatísticas</a></li>
+            <li><a href="login.html">Login/Cadastro</a></li>
+          </ul>
+        </div>
+    </header>
+    
+    <div class="divLogin" style="float: left;">
+      <div class="container">
+          <div class="box-login">
+              <h1>Vejo que naufragou... Seja bem-vindo!</h1>
+              <form id="form_login" method="post" onsubmit="return entrar()">
+                  Insira o nome de Invocador:
+                  <input type="text" class="input-padrao" name="login">
+                  <br>
+                  Insira a sua Senha:
+                  <input type="password" class="input-padrao" name="senha"> <br>
+                  <br>
+                  <a href=""> <button id="btn_entrar" class="btnLoginPadrao">Entrar</button> <br></a>
+                  <img src="../sources/bardoLol.gif" alt="">
+              </form>
+              <br>
+              Ainda não cadastrado? <br>
+             <a href="cadastro.html"> <button class="btnLoginPadrao">Cadastre-se!</button></a>
+
+              <div class="extra">
+                  <div id="div_erro" class="msg_erro">
+                  </div>
+                  <img src="aguarde-orange.gif" id="img_aguarde"  > <!--style="display: none;"-->
+              </div>
+</div>
+      </div>
+  </div>
+  <div class="usersCad" style="float: left;">
+   <h1>Últimos náufragos:</h1> <br>
+   <h1 class="ultimosLogins"></h1>
+   </b>
+  </div>
+
+
+
+
+
+
+</body>
+</html>
+
+<script>
+
+  function entrar() {
+      aguardar();
+      var formulario = new URLSearchParams(new FormData(form_login));
+      fetch("/usuarios/autenticar", {
+          method: "POST",
+          body: formulario
+      }).then(resposta => {
+
+          if (resposta.ok) {
+
+              resposta.json().then(json => {
+
+                  sessionStorage.login_usuario_meuapp = json.login;
+                  sessionStorage.nome_usuario_meuapp = json.nome;
+
+                  window.location.href = 'tempo-real.html';
+              });
+
+          } else {
+
+              console.log('Erro de login!');
+
+              resposta.text().then(texto => {
+                  console.error(texto);
+                  finalizar_aguardar(texto);
+              });
+          }
+      });
+
+      return false;
+  }
+
+  function aguardar() {
+      btn_entrar.disabled = true;
+      img_aguarde.style.visibility = 'visible';
+      div_erro.style.visibility = 'hidden';
+  }
+
+  function finalizar_aguardar(resposta) {
+      btn_entrar.disabled = false;
+      img_aguarde.style.visibility = 'hidden';
+      div_erro.style.visibility = 'visible';
+      div_erro.innerHTML = resposta;
+  }
+
+</script>
