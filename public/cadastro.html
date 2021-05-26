@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="basicos.css">
+    <link rel="stylesheet" href="login.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <a href="#" class="logo"><img src="../sources/logo1.png" alt=""></a>
+        <div class="container">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="basicos.html">Básicos</a></li>
+            <li><a href="discussao.html">Discussão</a></li>
+            <li><a href="news.html">News!</a></li>
+            <li><a href="about.html">Sobre nós</a></li>
+            <li><a href="stats.html">Estatísticas</a></li>
+            <li><a href="login.html">Login/Cadastro</a></li>
+          </ul>
+        </div>
+    </header>
+   
+
+    <div class="divCad" style="float: left;">
+      <div class="container">
+          <h1>Caiu de paraquedas ou veio nadando? <br> Não importa! Seja muito bem-vindo(a)!</h1>
+          <div class="formulario">
+              <form id="form_cadastro" method="post" onsubmit="return cadastrar()">
+                  Digite seu nome:
+                  <input type="text" name="nome" class="input-padrao" autofocus="autofocus" placeholder="Fulano de Tal"> <br>
+                  Insira seu sexo:
+                  <input type="text" name= "sexo" class="input-padrao" placeholder="'M' 'F' ou 'N' " required maxlength="1">  <br>
+                  Insira o Nome de Invocador:
+                  <input type="text" name="nick" class="input-padrao" placeholder="XxReidotop123xX" required maxlength="16"> <br>  <br>
+                  <!-- Primeiro select (com o campeao mais jogado) -->
+                  Insira o seu primeiro campeão mais jogado do top:
+                <select name="campeao1" id="">
+                    <option value="1">Aatrox</option>
+                    <option value="2">Akali</option>
+                    <option value="3">Camille</option>
+                    <option value="4">ChoGath</option>
+                    <option value="5">Darius</option>
+                    <option value="6">Dr. Mundo</option>
+                    <option value="7">Fiora</option>
+                    <option value="8">Gangplank</option>
+                    <option value="9">Garen</option>
+                    <option value="10">Gnar</option>
+                    <option value="11">Gragas</option>
+                    <option value="12">Gwen</option>
+                    <option value="13">Heimerdinger</option>
+                    <option value="14">Illaoi</option>
+                    <option value="15">Irelia</option>
+                    <option value="16">Jax</option>
+                    <option value="17">Jayce</option>
+                    <option value="18">Kayle</option>
+                    <option value="19">Kennen</option>
+                    <option value="20">Kled</option>
+                    <option value="21">Malphite</option>
+                    <option value="22">Maokai</option>
+                    <option value="23">Mordekaiser</option>
+                    <option value="24">Nasus</option>
+                    <option value="25">Ornn</option>
+                    <option value="26">Pantheon</option>
+                    <option value="27">Poppy</option>
+                    <option value="28">Quinn</option>
+                    <option value="29">Renekton</option>
+                    <option value="30">Rengar</option>
+                    <option value="31">Rumble</option>
+                    <option value="32">Ryze</option>
+                    <option value="33">Sett</option>
+                    <option value="34">Shen</option>
+                    <option value="35">Singed</option>
+                    <option value="36">Sion</option>
+                    <option value="37">Sylas</option>
+                    <option value="38">Teemo</option>
+                    <option value="39">Trundle</option>
+                    <option value="40">Tryndamere</option>
+                    <option value="41">Urgot</option>
+                    <option value="42">Vayne</option>
+                    <option value="43">Vladimir</option>
+                    <option value="44">Volibear</option>
+                    <option value="45">Wukong</option>
+                    <option value="46">Yasuo</option>
+                    <option value="47">Yone</option>
+                    <option value="48">Yorick</option>
+                </select>
+                  <!-- <input type="text" name="campeao1" class="input-padrao" placeholder="darius" >  -->
+                  Sua maestria?
+                  <input type="text" name="maestria1" class="input-padrao" placeholder="144k" > <br> 
+                  Voce se considera OTP?
+                  <input type="text" name="verificaOtp" class="input-padrao" placeholder="'S' ou 'N' " required maxlength="1"> <br><br>
+
+                <br>
+                <!-- Segundo select (com o 2o campeao mais jogado) -->
+                Insira o seu segundo campeão mais jogado do top:
+                <select name="campeao2" id="">
+                    <option value="1">Aatrox</option>
+                    <option value="2">Akali</option>
+                    <option value="3">Camille</option>
+                    <option value="4">ChoGath</option>
+                    <option value="5">Darius</option>
+                    <option value="6">Dr. Mundo</option>
+                    <option value="7">Fiora</option>
+                    <option value="8">Gangplank</option>
+                    <option value="9">Garen</option>
+                    <option value="10">Gnar</option>
+                    <option value="11">Gragas</option>
+                    <option value="12">Gwen</option>
+                    <option value="13">Heimerdinger</option>
+                    <option value="14">Illaoi</option>
+                    <option value="15">Irelia</option>
+                    <option value="16">Jax</option>
+                    <option value="17">Jayce</option>
+                    <option value="18">Kayle</option>
+                    <option value="19">Kennen</option>
+                    <option value="20">Kled</option>
+                    <option value="21">Malphite</option>
+                    <option value="22">Maokai</option>
+                    <option value="23">Mordekaiser</option>
+                    <option value="24">Nasus</option>
+                    <option value="25">Ornn</option>
+                    <option value="26">Pantheon</option>
+                    <option value="27">Poppy</option>
+                    <option value="28">Quinn</option>
+                    <option value="29">Renekton</option>
+                    <option value="30">Rengar</option>
+                    <option value="31">Rumble</option>
+                    <option value="32">Ryze</option>
+                    <option value="33">Sett</option>
+                    <option value="34">Shen</option>
+                    <option value="35">Singed</option>
+                    <option value="36">Sion</option>
+                    <option value="37">Sylas</option>
+                    <option value="38">Teemo</option>
+                    <option value="39">Trundle</option>
+                    <option value="40">Tryndamere</option>
+                    <option value="41">Urgot</option>
+                    <option value="42">Vayne</option>
+                    <option value="43">Vladimir</option>
+                    <option value="44">Volibear</option>
+                    <option value="45">Wukong</option>
+                    <option value="46">Yasuo</option>
+                    <option value="47">Yone</option>
+                    <option value="48">Yorick</option>
+                </select>
+                  <!-- Insira o seu segundo campeão mais jogado do top:
+                  <input type="text" name="campeao2" class="input-padrao" placeholder="mordekaiser" >  -->
+                  Sua maestria?
+                  <input type="text" name="maestria2" class="input-padrao" placeholder="90k" > <br> 
+                  
+                     <!-- terceiro select (com o 3o campeao mais jogado) -->
+                Insira o seu terceiro campeão mais jogado do top:
+                <select name="campeao3" id="">
+                    <option value="1">Aatrox</option>
+                    <option value="2">Akali</option>
+                    <option value="3">Camille</option>
+                    <option value="4">ChoGath</option>
+                    <option value="5">Darius</option>
+                    <option value="6">Dr. Mundo</option>
+                    <option value="7">Fiora</option>
+                    <option value="8">Gangplank</option>
+                    <option value="9">Garen</option>
+                    <option value="10">Gnar</option>
+                    <option value="11">Gragas</option>
+                    <option value="12">Gwen</option>
+                    <option value="13">Heimerdinger</option>
+                    <option value="14">Illaoi</option>
+                    <option value="15">Irelia</option>
+                    <option value="16">Jax</option>
+                    <option value="17">Jayce</option>
+                    <option value="18">Kayle</option>
+                    <option value="19">Kennen</option>
+                    <option value="20">Kled</option>
+                    <option value="21">Malphite</option>
+                    <option value="22">Maokai</option>
+                    <option value="23">Mordekaiser</option>
+                    <option value="24">Nasus</option>
+                    <option value="25">Ornn</option>
+                    <option value="26">Pantheon</option>
+                    <option value="27">Poppy</option>
+                    <option value="28">Quinn</option>
+                    <option value="29">Renekton</option>
+                    <option value="30">Rengar</option>
+                    <option value="31">Rumble</option>
+                    <option value="32">Ryze</option>
+                    <option value="33">Sett</option>
+                    <option value="34">Shen</option>
+                    <option value="35">Singed</option>
+                    <option value="36">Sion</option>
+                    <option value="37">Sylas</option>
+                    <option value="38">Teemo</option>
+                    <option value="39">Trundle</option>
+                    <option value="40">Tryndamere</option>
+                    <option value="41">Urgot</option>
+                    <option value="42">Vayne</option>
+                    <option value="43">Vladimir</option>
+                    <option value="44">Volibear</option>
+                    <option value="45">Wukong</option>
+                    <option value="46">Yasuo</option>
+                    <option value="47">Yone</option>
+                    <option value="48">Yorick</option>
+                </select> 
+                  
+                  
+                  
+                  <!-- Insira o seu terceiro campeão mais jogado do top:
+                  <input type="text" name="campeao3" class="input-padrao" placeholder="nasus" >  -->
+                  Sua maestria?
+                  <input type="text" name="maestria3" class="input-padrao" placeholder="70k" > <br> 
+                  Seu elo atual?
+                  <input type="text" name="elo" class="input-padrao" placeholder="bronze" > <br><br>
+
+                  Senha
+                  <input type="password" name="senha" class="input-padrao" placeholder="*******"> <br>
+                  <input type="submit" id="btn_entrar" value="Cadastrar" class="btn-green"> <br>
+                  
+              </form>
+              Já tem uma conta? <a href="login.html"><button>Log1n</button></a>
+              <img src="aguarde-orange.gif" id="img_aguarde" style="display: none; width:100px">
+  
+  <div id="div_erro" style="background-color: sandybrown; color: maroon; display: none;">
+      Erro no cadastro
+  </div>
+
+</div>
+          <div class="imagem-lateral">
+              <img src="img/side-img-contato_orange.jpg">
+          </div>
+      </div>
+  </div>
+
+ 
+</body>
+</html>
+
+<script>
+let login_usuario;
+let nome_usuario;
+
+function cadastrar() {
+        // aguardar();
+        var formulario = new URLSearchParams(new FormData(form_cadastro));
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (response) {
+
+            if (response.ok) {
+
+                window.location.href='login.html';
+
+            } else {
+
+                console.log('Erro de cadastro!');
+                response.text().then(function (resposta) {
+                    div_erro.innerHTML = resposta;
+                });
+                // finalizar_aguardar();
+            }
+        });
+
+        return false;
+    }
+
+// function redirecionar_login() {
+//     window.location.href = 'login.html';
+// }
+
+// function verificar_autenticacao() {
+//     login_usuario = sessionStorage.login_usuario_meuapp;
+//     nome_usuario = sessionStorage.nome_usuario_meuapp;
+    
+//     if (login_usuario == undefined)  {
+//         redirecionar_login();
+//     } else {
+//         b_usuario.innerHTML = nome_usuario;
+//         validar_sessao();
+//     }
+    
+// }
+
+// function logoff() {
+//     finalizar_sessao();
+//     sessionStorage.clear();
+//     redirecionar_login();
+// }
+
+// function validar_sessao() {
+//     fetch(`/usuarios/sessao/${login_usuario}`, {cache:'no-store'})
+//     .then(resposta => {
+//         if (resposta.ok) {
+//             resposta.text().then(texto => {
+//                 console.log('Sessão :) ', texto);    
+//             });
+//         } else {
+//             console.error('Sessão :.( ');
+//             logoff();
+//         } 
+//     });    
+// }
+
+// function finalizar_sessao() {
+//     fetch(`/usuarios/sair/${login_usuario}`, {cache:'no-store'}); 
+// }
+
+
+
+</script>

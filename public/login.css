@@ -1,0 +1,73 @@
+*{
+    font-size: 30px;
+    font-family: 'Amatic SC';
+}
+
+.divLogin {
+        backdrop-filter: blur(7px);
+        /*background-color: red;*/
+        background-image: url('../sources/areiaFina.png');
+        margin-top: 2%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 2%;
+        border: 1px solid rgba(0, 0, 0, 0.5);
+        border-radius: 40px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-content: center;
+        width: 40%;
+        
+      
+}
+
+.divCad {
+    backdrop-filter: blur(7px);
+    /*background-color: red;*/
+    background-image: url('../sources/areiaFina.png');
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 2%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-content: center;
+    width: 60%;
+    
+  
+}
+
+
+.divLogin img{
+   border-radius: 40px;
+   margin-bottom: 2%;
+   margin-top: 2%;
+  
+}
+
+.btnLoginPadrao{
+    width: 100%;
+    border-radius: 40px;
+}
+.btnLoginPadrao:hover{
+   background-color: orange;
+    border-radius: 0px;
+}
+
+.usersCad{
+    margin-top: 2%;
+    background-image: url(../sources/areiaFina.png);
+    /*background-color: red;*/
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 40px;
+}
+

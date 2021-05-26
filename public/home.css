@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ubuntu:wght@500&display=swap');
+
+*{
+    font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+   /* display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; */
+    background-color: #f8f7de;
+    margin: 0%;
+    padding: 0%;
+  }
+ 
+/*header */
+.cabecalho{
+    width: 100%;
+    height: 110px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c75643;
+    padding: none;
+    margin: none;
+  
+    
+}
+
+.cabecalho img{
+    font-size: 2em;
+    text-transform: uppercase;
+    width: 120px;
+    height: 150px;
+    margin-top: 30px;
+
+}
+.cabecalho ul{
+    display: flex;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+ 
+}
+
+
+.cabecalho li{
+    justify-content: space-between;
+    display: flex;
+    flex-direction: row;
+    padding-right: 5px;
+    text-decoration: none;
+    border-left: 3px solid rgba(0, 0, 0, 0.2);
+  
+    
+}
+
+.cabecalho a{
+    color: white;
+    text-decoration: none;
+    font-family: 'Amatic SC';
+    font-size: 30px;
+}
+
+.cabecalho a:hover{
+    color: #f8f7de;
+   
+}
+
+
+/*header FIM*/
+
+/*começo news*/
+.espacoQues {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*background-color: red;*/
+    width: 100vh;
+    margin-left: 5%;
+}
+.divQues1{
+    /*background-color: white;*/
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+}
+.divQues1 img{
+    width: 250px;
+    height: 200px;
+    border-radius: 50%;
+}
+.divQues1 img:hover{
+    width: 350px;
+    height: 300px;
+    transition: 0.5s;
+    border-radius: 0%;
+}
+
+
+/*fim news*/
+
+
+/*inicio banner*/
+.divLorem {
+    display: flex;
+    width: 100%;
+    background-color: blue;
+    justify-content: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    margin-left: 0%;
+    margin-right: 0%;
+    background-image: url('../sources/pool.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    opacity: 0.5;
+
+    
+}
+.divLorem img{
+    max-width: 100%;
+  height: auto;
+
+}
+
+.divH1 h1{
+    display: flex;
+    font-size: 101px;
+    font-family: 'Amatic SC';
+    opacity: 1;
+
+}
+/*fim banner*/
+.divDiscussao{
+margin-left: 10px;
+}
+
+/*comeco imagem*/
+.divImgs{
+   /* background-color: blueviolet;*/
+    margin-right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    width: 40%;
+
+}
+
+.divImgs img{
+    width: 100%;
+    height: 70vh;
+    /* border-radius: 100px; */
+}
+/*fim imagem*/
+footer {
+    background-color: red;
+    text-align: center;
+    height: 300px;
+    display: flex;
+    align-content: center;
+
+}
+.footerContainer{
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    background-color: #c75643;
+    margin-top: 5%;
+    padding-right: 5%;
+    padding-bottom: 2%;
+   
+}
+
+.footer h4 {
+    color: white;
+    font-weight: lighter;
+    font-size: 20px;
+    padding-left: 5%;
+
+}
+.footerContainer img{
+    width: 150px;
+    height: 150px;
+}

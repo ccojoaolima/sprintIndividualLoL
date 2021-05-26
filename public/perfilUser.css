@@ -1,0 +1,44 @@
+.containerInfos{
+    padding-left: 5%;
+    padding-right: 5%;
+  
+    background-color: green;
+}
+
+
+.divUser{
+    display: flex;
+    align-content: center;
+    background-color: red; 
+    flex-direction: column;
+    width: 15%;
+    height: 100vh;
+ 
+    /* background-image: url('../public/sources/areiaFina.png'); */
+}
+.divUser img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+}
+
+.imgUser{
+    background-color: hotpink;
+}
+
+.tableUser {
+    width: 50%;
+    height: 50%;
+    margin-top: 2%;
+    padding: 1%;
+    display: flex;
+    align-content: center;
+    background-color: blue;
+    border-radius: 40px;
+
+}
+.tableUser td{
+    text-align: center;
+    /* background-color: red; */
+    /* background-image: url('../public/sources/areiaFina.png'); */
+}

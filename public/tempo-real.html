@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto IoT - Tempo Real</title>
+    <script type="text/javascript" src="funcoes.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="basicos.css">
+    <link rel="stylesheet" href="perfilUser.css">
+</head>
+
+<body >
+
+    <!--header inicio-->
+    <header class="cabecalho">
+        <a href="#" class="logo"><img src="../sources/logo1.png" alt=""></a>
+        <div class="container">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="basicos.html">Básicos</a></li>
+            <li><a href="discussao.html">Discussão</a></li>
+            <li><a href="news.html">News!</a></li>
+            <li><a href="about.html">Sobre nós</a></li>
+            <li><a href="stats.html">Estatísticas</a></li>
+            <li><a href="login.html">Login/Cadastro</a></li>
+          </ul>
+        </div>
+    </header>
+    <div class="containerInfos">
+        <div class="divUser" style="float: left;">
+            <img src="" alt="">
+            <h3>Olá, <b id="b_usuario"></b></h3> <br>
+            <div class="imgUser">
+                
+                a
+            </div>
+           
+        
+            </div>
+           <div class="tableUser" style="float: right;">
+            <table style="width:100%">
+                <tr>
+                  <th>Mains:</th>
+                  <th>Pontos de maestria:</th>
+                  <th>Otp?</th>
+                </tr>
+                <tr>
+                  <td id="tdChamp1"></td>
+                  <td id="tdMain1"></td>
+                  <td id="tdOtp"></td>
+                </tr>
+                <tr>
+                  <td id="tdChamp2"></td>
+                  <td id="tdMain2"></td>
+                  <td></td>
+                </tr>
+                <tr>
+                    <td id="tdChamp3"></td>
+                    <td id="tdMain3"></td>
+                    <td></td>
+                  </tr>
+              </table>
+        
+           </div>
+    </div>
+    
+
+</body>
+
+
+<script>
+
+    let usuario;
+    verificar_autenticacao();
+
+    // só mexer se quiser alterar o tempo de atualização
+    // ou se souber o que está fazendo!
+  
+
+    /*function sendData() {
+        var http = new XMLHttpRequest();
+        http.open('GET', 'http://localhost:9001/api/sendData', false);
+        http.send(null);
+    }
+
+    // Descomente abaixo se quiser inserir dados a cada X segundos  
+    setInterval(() => {
+        sendData();
+    }, 5000);*/
+
+</script>
