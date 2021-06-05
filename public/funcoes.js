@@ -7,14 +7,57 @@ let campeao1;
 let campeao2;
 let campeao3;
 let verificaOtp;
+let opgg;
 
-var listaCampeoes =["Aatrox","Akali","Camille","Dr. Mundo","Fiora"
-,"Gangplank","Garen","Gnar","Gragas","Gwen","Heimerdinger","Illaoi"
-,"Irelia","Jax","Jayce","Kayle","Kennen","Kled","Malphite","Maokai"
-,"Mordekaiser","Nasus","Ornn","Pantheon","Poppy","Quinn"
-,"Renekton","Rengar","Rumble","Sett","Shen","Singed","Sion"
-,"Sylas","Teemo","Trundle","Tryndamere","Vayne","Vladimir","Volibear","Wukong"
-,"Yasuo","Yone","Yorick"];
+var listaCampeoes =[
+"Aatrox",
+"Akali",
+"Camille",
+"ChoGath",
+"Darius",
+"Dr. Mundo",
+"Fiora"
+,"Gangplank",
+"Garen",
+"Gnar",
+"Gragas",
+"Gwen",
+"Heimerdinger",
+"Illaoi"
+,"Irelia",
+"Jax",
+"Jayce",
+"Kayle",
+"Kennen",
+"Kled",
+"Malphite",
+"Maokai"
+,"Mordekaiser",
+"Nasus",
+"Ornn",
+"Pantheon",
+"Poppy",
+"Quinn"
+,"Renekton",
+"Rengar",
+"Rumble",
+"Ryze",
+"Sett",
+"Shen",
+"Singed",
+"Sion"
+,"Sylas",
+"Teemo",
+"Trundle",
+"Tryndamere",
+"Urgot",
+"Vayne",
+"Vladimir",
+"Volibear",
+"Wukong"
+,"Yasuo",
+"Yone",
+"Yorick"];
 
 function redirecionar_login() {
     window.location.href = 'login.html';
@@ -32,16 +75,14 @@ function verificar_autenticacao() {
     verificaOtp = sessionStorage.verificaOtp;
     
     
-    var posicaoVetorCampeao1 = campeao1 -3 ;
-    var posicaoVetorCampeao2 = campeao2 -3;
-    var posicaoVetorCampeao3 = campeao3 -3;
+    var posicaoVetorCampeao1 = campeao1 - 1;
+    var posicaoVetorCampeao2 = campeao2 - 1;
+    var posicaoVetorCampeao3 = campeao3 - 1;
     
     //com base no vetor puxaremos o nome do campeao
     var nomeChamp1 = listaCampeoes[posicaoVetorCampeao1];
     var nomeChamp2 = listaCampeoes[posicaoVetorCampeao2];
     var nomeChamp3 = listaCampeoes[posicaoVetorCampeao3];
-
-    
     if (login_usuario == undefined)  {
         redirecionar_login();
     } else {
@@ -53,16 +94,14 @@ function verificar_autenticacao() {
         tdChamp1.innerHTML = nomeChamp1;
         tdChamp2.innerHTML = nomeChamp2;
         tdChamp3.innerHTML = nomeChamp3;
-        
-        // divUser.innerHTML =app.use(express.static('../public/campeoes/rumble.jpg'));
 
+        opgg = login_usuario.replace(" ","+");
+        console.log(opgg);
+
+        imgUser.innerHTML = `<img src= '../campeoes/${nomeChamp1}.jpg' alt=""> `;
+        divOPGG.innerHTML = `<iframe src="https://br.op.gg/summoner/userName=${opgg}" frameborder="0" width:'700px' height:'700px'></iframe>`;
+      
         tdOtp.innerHTML = verificaOtp;
-        
-
-
-        
-
-
         validar_sessao();
     }
     

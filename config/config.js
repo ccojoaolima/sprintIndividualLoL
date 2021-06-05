@@ -27,7 +27,7 @@ module.exports = {
     // altere APENAS username, password e database.
     username: 'root',
     password: 'mfwhore3150',
-    database: 'dbIlha',
+    database: 'dbilha',
     host: 'localhost',
     dialect: 'mysql',
     xuse_env_variable: 'DATABASE_URL',

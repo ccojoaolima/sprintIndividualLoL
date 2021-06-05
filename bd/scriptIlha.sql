@@ -79,9 +79,22 @@ insert into campeao values
 
 
 
+select * from campeao where nomeCampeao = 'teemo';
+select count(distinct(localProj))  from projeto;
+select count(idUsuario) as 'todosUsers' from usuario ;
+select * from departamento where fkDepto = (select idDepto from departamento where nomeDepto = 'Pesquisa');
+ select count(idUsuario) as 'jogadoresDeTeemo' from usuario where fkCampeao1 = 38;
+select nomeInvocador from usuario;
+SELECT nomeInvocador as 'ultimosCad' FROM usuario ORDER BY idUsuario DESC LIMIT 3;
+select idCampeao, nomeCampeao as 'nomeCampeao' from campeao order by idCampeao desc limit 3;
+-- select distinct(fkCampeao1),(select distinct(fkCampeao2)),(select distinct(fkCampeao3)), nomeCampeao from usuario join campeao on fkCampeao1=idCampeao, fkCampeao2 = idCampeao, fkCampeao3 = idCampeao;
 
 
 
+select  fkCampeao1 as champPopular, max(count(*)) as count from usuario group by fkCampeao1 order by count desc ;
+select max(count(fkCampeao1)) as 'champPopular' from usuario;
+SELECT fkCampeao1 FROM usuario LIMIT 1;
+select count(fkCampeao1) from usuario where fkCampeao1 = 9;
 
 
 create table discussao(
@@ -91,6 +104,10 @@ dataDisc date,
 fkUsuario int,
 foreign key (fkUsuario) references usuario (idUsuario));
 
+select fkCampeao1,count(*) as 'champPopular' from usuario group by fkCampeao1 limiT 1;
+
+select * from departamento where fkDepto = (select idDepto from departamento where nomeDepto = 'Pesquisa');
+select(select count(verificaOtp) from usuario where verificaOtp = 's' ) as 'otp', count(idUsuario) as 'totalUsers' from usuario;
 
 create table campeaoDoUsuario(
 fkCampeao int,
@@ -107,10 +124,10 @@ fkUsuario int,
 foreign key(fkUsuario) references usuario(idUsuario),
 campoComment varchar(160),
 dataComment date );
-
+select count(idUsuario) from usuario;
 
 select * from usuario;
-select * from campeao;
-select * from discussao;
+select count(fkCampeao1), nomeCampeao from usuario join campeao on fkCampeao1 = idCampeao;
 
+select * from campeao;
 drop database dbIlha;

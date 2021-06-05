@@ -10,7 +10,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center; */
-    background-color: #f8f7de;
+    background-color: #f0d8c0;
     margin: 0%;
     padding: 0%;
   }
@@ -22,7 +22,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #c75643;
+    background-color: #00d8c0; 
     padding: none;
     margin: none;
   
@@ -68,6 +68,13 @@ body {
     color: #f8f7de;
    
 }
+.barraCabecalho{
+    width: 100%;
+    height: 1%;
+    margin: 0px;
+    padding: 0px;
+    background-color: #60f0d8;
+}
 
 
 /*header FIM*/
@@ -108,7 +115,7 @@ body {
 .divLorem {
     display: flex;
     width: 100%;
-    background-color: blue;
+    /* background-color: blue; */
     justify-content: center;
     margin-top: 3%;
     margin-bottom: 3%;

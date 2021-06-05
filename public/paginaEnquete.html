@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css" />
+    <link rel="stylesheet" href="basicos.css">
+    <link rel="stylesheet" href="estiloEnquete.css">
+    <script src="mudarTema.js"></script>
+    <link rel="stylesheet" href="ilhaDark.css" />
+    <script async type="text/javascript" src="https://www.criarenquete.com.br/user.js"></script>
+    <title>Enquete: Qual é o campeão mais irritante do top?</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <a href="#" class="logo"><img src="../sources/logo1.png" alt=""></a>
+        <div class="container">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="basicos.html">Básicos</a></li>
+            <li><a href="discussao.html">Discussão</a></li>
+            <li><a href="news.html">News!</a></li>
+            <li><a href="about.html">Sobre nós</a></li>
+            <li><a href="stats.html">Estatísticas</a></li>
+            <li><a href="login.html">Login/Cadastro</a></li>
+          </ul>
+        </div>
+    </header>
+    <div class="barraCabecalho">
+        <button onclick="darkMode()">Alterar tema</button> 
+    </div>
+ <br>
+    <div class="divArtigo">
+        <h1>A questão eterna! A ilha do top está disposta a responde-la! <br></h1>
+        Desde os primórdios do League of Legends, todos sabem que esses campeões são conhecidos por serem extremamente desagradáveis de se enfrentar. 
+        <h1>Mas afinal, por que desse meme existir?</h1>
+        Pois no top, a maioria dos campeões são corpo-a-corpo e duelistas, e estes campeões não-convencionais conseguem abusar muito de seus oponentes <br>
+        e por muito tempo, quase que sem counter. Clique nos campeões e saiba mais!<br> <br>
+        <h2>Mas e em SUA opinião? Qual é o mais irritante? Vote abaixo!</h2> <br> <br> <br>
+        <div class="divVideo">
+        
+        </div>
+        <div class="divImagens">
+            <img onclick="infoQuinn()" src="../campeoes/quinn.jpg" alt="" >
+            <img onclick="infoTeemo()"src="../campeoes/teemo.jpg" alt="">
+            <img onclick="infoMalph()"src="../campeoes/malph.jpg" alt="">
+            
+        </div>
+
+        <div id ="divExplica">
+            
+        </div>
+
+
+        <br>
+      
+   
+         
+    </div>
+    <div class="divEnglobaEnquete">
+        <ce:enquete id="9968610" question_size="5" option_size="6" img_option_size="5" font="Roboto, sans-serif" primary_color="#000000" secondary_color="#ffffff" height="268"></ce:enquete>
+        
+    </div>
+ 
+   
+ <br>
+<div class="footer">
+  <div class="footerContainer">
+      <h4>(2021) Ilha do top - De um toplaner para outro.</h4> <br>
+      <img src="../sources/logo1.png" alt="">
+  </div>
+</div>
+</body>
+</html>
+<script>
+function infoQuinn(){
+    divExplica.innerHTML = `    
+    <br><br><iframe width="560" height="315" src="https://www.youtube.com/embed/PojNRjDlbIc?controls=0&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <h2>Quinn</h2>
+       Ataques a longa distancia, fortalecidos com sua passiva, onde ela ganha mais dano no alvo marcado <br>
+       e mais velocidade de ataque ao atingir seu alvo com a passiva de sua habilidade (W), além disso, uma cegueira na sua habilidade (Q) e um desengage no seu (E). <br>
+       É um campeão muito completo e temido -- com razão.</div>`;
+}
+function infoTeemo(){
+    divExplica.innerHTML = `    
+    <br><br><iframe width="560" height="315" src="https://www.youtube.com/embed/rNyg3iiOYvk?controls=0&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  <br>
+       <h2>Teemo</h2>
+      O clássico! Famoso por ser irritante a ponto de ter uma skin com o nome de "Capeteemo" <br>
+      Cegueira impossível de errar com o (Q) <br>
+      Cogumelos que tiram metade da vida com sua Ultimate e ataques básicos com dano por segundo! <br>
+      Ele vai tirar sua vida -- aos poucos.</div>`;
+}
+function infoMalph(){
+    divExplica.innerHTML = `    
+    <br><br><iframe width="560" height="315" src="https://www.youtube.com/embed/S-UJ1kfisDE?controls=0&autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br>
+       <h2>Malphite</h2>
+      Sua passiva de escudo bloqueia potencial dano nos primeiros níveis <br>
+      Slow no seu (Q), baixos custos de mana e baixo cooldown para te dar muito poke e dano na lane<br>
+      seu dano em área e sua habilidade única de tankar como ninguém!<br>
+      E claro que com sua ultimate -- seu time será aniquilado.</div>`;
+}
+</script>

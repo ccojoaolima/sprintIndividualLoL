@@ -1,15 +1,16 @@
 .containerInfos{
     padding-left: 5%;
     padding-right: 5%;
-  
     background-color: green;
+    justify-content: center;
 }
 
 
 .divUser{
     display: flex;
     align-content: center;
-    background-color: red; 
+    /* background-color: red;  */
+    background-image: url('../sources/wood2.png');
     flex-direction: column;
     width: 15%;
     height: 100vh;
@@ -32,8 +33,9 @@
     margin-top: 2%;
     padding: 1%;
     display: flex;
-    align-content: center;
-    background-color: blue;
+    align-self: center;
+    background-image: url('../sources/areiaFina.png');
+    /* background-color: blue; */
     border-radius: 40px;
 
 }
@@ -41,4 +43,32 @@
     text-align: center;
     /* background-color: red; */
     /* background-image: url('../public/sources/areiaFina.png'); */
+}
+.aglobaOPGG{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    width: 70%;
+    height: 100%;
+    padding-right: 10%;
+    margin-top: 1%;
+    padding-bottom: 1%;
+    background-image: url('../sources/areiaFina.png');
+/* background-color: red; */
+}
+
+#divOPGG{
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  /* background-color: yellow; */
+  margin-left: 10%;
+  margin-top: 2%;
+
+}
+#divOPGG iframe{
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
 }

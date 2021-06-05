@@ -11,9 +11,11 @@
     <link rel="stylesheet" href="home.css" />
     <link rel="stylesheet" href="basicos.css">
     <link rel="stylesheet" href="login.css">
-    <title>Document</title>
+    <script src="mudarTema.js"></script>
+    <link rel="stylesheet" href="ilhaDark.css" />
+    <title>Login</title>
 </head>
-<body>
+<body onload="carregarRecentes()">
     <header class="cabecalho">
         <a href="#" class="logo"><img src="../sources/logo1.png" alt=""></a>
         <div class="container">
@@ -28,6 +30,10 @@
           </ul>
         </div>
     </header>
+    <div class="barraCabecalho">
+        <button onclick="darkMode()">Alterar tema</button> 
+    </div>
+
     
     <div class="divLogin" style="float: left;">
       <div class="container">
@@ -56,8 +62,8 @@
       </div>
   </div>
   <div class="usersCad" style="float: left;">
-   <h1>Últimos náufragos:</h1> <br>
-   <h1 class="ultimosLogins"></h1>
+   <h1>Último náufrago:</h1> <br>
+   <h1 id="ultimosLogins"></h1>
    </b>
   </div>
 
@@ -88,8 +94,7 @@
                   sessionStorage.campeao3 = json.fkCampeao3;
                   sessionStorage.verificaOtp = json.verificaOtp;
                   sessionStorage.eloUsuario = json.eloUsuario;
-                  
-               
+                    
 
                   window.location.href = 'tempo-real.html';
               });
@@ -120,5 +125,27 @@
       div_erro.style.visibility = 'visible';
       div_erro.innerHTML = resposta;
   }
+
+  function carregarRecentes(){
+var ultimosCad1;
+
+    fetch("/leituras/recentes", {
+        method: "GET"
+    }).then(resposta => {
+
+        if (resposta.ok) {
+            resposta.json().then(json => {
+                sessionStorage.cadastrosRecentes = json.ultimosCad;
+                ultimosCad1 = sessionStorage.cadastrosRecentes;
+
+                ultimosLogins.innerHTML = ultimosCad1;
+            });
+
+        } 
+
+}
+    )} 
+
+
 
 </script>

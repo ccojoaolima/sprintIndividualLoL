@@ -9,7 +9,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="home.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="ilhaDark.css" />
+    <script src="mudarTema.js"></script>
+    <title>Home</title>
 </head>
 <body>
     <header class="cabecalho">
@@ -25,7 +27,11 @@
             <li><a href="login.html">Login/Cadastro</a></li>
           </ul>
         </div>
+        
     </header>
+    <div class="barraCabecalho">
+        <button onclick="darkMode()">Alterar tema</button> 
+    </div>
 
 <div class="divLorem" style="float: left; ">
     <div class="divH1">
@@ -38,13 +44,13 @@
 <div class="divDiscussao" style="float: left;">
     <div class="espacoQues">
         <div class="divQues1">
-           <a href=""><img src="../sources/enquete.jpg" alt="">  </a> <figcaption>Vote na enquete.</figcaption> 
+           <a href="paginaEnquete.html"><img src="../sources/enquete.jpg" alt="">  </a> <figcaption>Vote na enquete.</figcaption> 
         </div>
          <div class="divQues1">
-            <a href=""><img src="../sources/idahotb-icon.png" alt=""> </a>   <figcaption>Evento LGBTQIA+ da ilha!.</figcaption> 
+            <a href="about.html"><img src="../sources/idahotb-icon.png" alt=""> </a>   <figcaption>Saiba mais sobre a ilha!</figcaption> 
          </div>
              <div class="divQues1">
-                <a href=""><img src="../sources/challenger.png" alt=""> </a>   <figcaption>Aprenda com os melhores!</figcaption> 
+                <a href="discussaoChallenger.html"><img src="../sources/challenger.png" alt=""> </a>   <figcaption>Aprenda com os melhores!</figcaption> 
              </div>
     </div>
    <br>
@@ -79,6 +85,8 @@
 </body>
 </html>
 <script>
+
+
 var slideIndex = 0;
 carousel();
 

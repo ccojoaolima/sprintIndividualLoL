@@ -86,16 +86,9 @@ router.get('/tempo-real/:idcaminhao', function(req, res, next) {
 // estatísticas (max, min, média, mediana, quartis etc)
 router.get('/estatisticas', function (req, res, next) {
 	
-	console.log(`Recuperando as estatísticas atuais`);
+	console.log(`Recuperando as qtde. de usuarios cadastrados totais`);
 
-	const instrucaoSql = `select 
-							max(temperatura) as temp_maxima, 
-							min(temperatura) as temp_minima, 
-							avg(temperatura) as temp_media,
-							max(umidade) as umidade_maxima, 
-							min(umidade) as umidade_minima, 
-							avg(umidade) as umidade_media 
-						from leitura`;
+	const instrucaoSql = `select count(idUsuario) as 'todosUsers' from usuario; `;
 					
 
 	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
@@ -107,6 +100,75 @@ router.get('/estatisticas', function (req, res, next) {
 		});
   
 });
+router.get('/estatisticas2', function (req, res, next) {
+	
+	console.log(`Recuperando a qtde. de jogadores de teemo`);
+
+	const instrucaoSql = ` select count(idUsuario) as 'jogadoresDeTeemo' from usuario where fkCampeao1 = 38; `;
+					
+
+	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
+		.then(resultado => {
+			res.json(resultado[0]);
+		}).catch(erro => {
+			console.error(erro);
+			res.status(500).send(erro.message);
+		});
+  
+});
+
+router.get('/recentes', function (req, res, next) {
+	
+	console.log(`Recuperando os 3 mais recentes cadastros`);
+
+	const instrucaoSql = `SELECT nomeInvocador as 'ultimosCad' FROM usuario ORDER BY idUsuario DESC LIMIT 3;`;
+					
+
+	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
+		.then(resultado => {
+			res.json(resultado[0]);
+		}).catch(erro => {
+			console.error(erro);
+			res.status(500).send(erro.message);
+		});
+  
+});
+
+router.get('/campeaoPopular', function (req, res, next) {
+	
+ console.log(`Recuperando os Campeao mais popular`);
+
+	const instrucaoSql =  `select fkCampeao1,count(*) as 'nroMains' from usuario group by fkCampeao1 limiT 1;`;
+					
+
+	sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
+		.then(resultado => {
+			res.json(resultado[0]);
+		}).catch(erro => {
+			console.error(erro);
+			res.status(500).send(erro.message);
+		});
+  
+});
+
+router.get('/graficosStats', function (req, res, next) {
+	
+	console.log(`Recuperando graficosStats`);
+   
+	   const instrucaoSql =  `select(select count(verificaOtp) from usuario where verificaOtp = 's' ) as 'otp', count(idUsuario) as 'totalUsers' from usuario;`;
+					   
+   
+	   sequelize.query(instrucaoSql, { type: sequelize.QueryTypes.SELECT })
+		   .then(resultado => {
+			   res.json(resultado[0]);
+		   }).catch(erro => {
+			   console.error(erro);
+			   res.status(500).send(erro.message);
+		   });
+	 
+   });
+
+
 
 
 module.exports = router;

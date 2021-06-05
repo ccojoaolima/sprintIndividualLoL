@@ -5,12 +5,6 @@ var Usuario = require('../models').Usuario;
 
 let sessoes = [];
 
-// var sql = `select count(idUsuario) as contUser from usuario `
-// connection.query(sql, function(err, rows, fields) {
-//   if (err) throw err;
-//   console.log('Query result: ', rows);
-// });
-
 
 /* Recuperar usuário por login e senha */
 router.post('/autenticar', function(req, res, next) {
@@ -20,8 +14,7 @@ router.post('/autenticar', function(req, res, next) {
 	var senha = req.body.senha; // depois de .body, use o nome (name) do campo em seu formulário de login	
 	
 	let instrucaoSql = `select * from usuario where nomeInvocador='${login}' and senha='${senha}'`;
-	// SELECT COUNT(*) AS namesCount FROM names WHERE age = ?
-	// let instrucaoSql2 = `select count(idUsuario) as contUser from usuario `;	
+	
 
 	console.log(instrucaoSql);
 	// console.log(instrucaoSql2);

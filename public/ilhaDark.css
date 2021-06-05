@@ -1,0 +1,28 @@
+.darkMode {
+    background-color: #25386b;
+    color: white;
+  }
+
+.darkMode .cabecalho{
+    background-color: #1f1c38; 
+}
+.darkMode .cabecalho img{
+    background-image:url('../sources/moon.png');
+    background-position: center; 
+    width: 120px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+
+
+.lightMode{
+    background-color: #f0d8c0;
+    color: black;
+
+}
+
+.lightMode .cabecalho{
+    background-color: #00d8c0; 
+}
+  

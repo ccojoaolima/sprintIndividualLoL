@@ -1,42 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ubuntu:wght@500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="home.css" />
-    <link rel="stylesheet" href="basicos.css">
-    <link rel="stylesheet" href="toplane1.css">
-    <link rel="stylesheet" href="toplane2.css">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Ubuntu:wght@500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="basicos.css">
+  <link rel="stylesheet" href="stats.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="graficosStats.js"></script>
+  <script src="mudarTema.js"></script>
+  <link rel="stylesheet" href="ilhaDark.css" />
+  <title>Estatísticas da Ilha</title>
 </head>
-<body>
-    <header class="cabecalho">
-        <a href="#" class="logo"><img src="../sources/logo1.png" alt=""></a>
-        <div class="container">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="basicos.html">Básicos</a></li>
-            <li><a href="discussao.html">Discussão</a></li>
-            <li><a href="news.html">News!</a></li>
-            <li><a href="about.html">Sobre nós</a></li>
-            <li><a href="stats.html">Estatísticas</a></li>
-            <li><a href="login.html">Login/Cadastro</a></li>
-          </ul>
-        </div>
-    </header>
-    
 
+<body onload="carregarCampeaoPopular(), graficosStats()">
+  <header class="cabecalho">
+    <a href="#" class="logo"><img src="../sources/logo1.png" alt=""></a>
+    <div class="container">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="basicos.html">Básicos</a></li>
+        <li><a href="discussao.html">Discussão</a></li>
+        <li><a href="news.html">News!</a></li>
+        <li><a href="about.html">Sobre nós</a></li>
+        <li><a href="stats.html">Estatísticas</a></li>
+        <li><a href="login.html">Login/Cadastro</a></li>
+      </ul>
+    </div>
+  </header>
+  <div class="barraCabecalho">
+    <button onclick="darkMode()">Alterar tema</button>
+  </div> <br>
 
-    <div class="footer">
-      <div class="footerContainer">
-          <h4>(2021) Ilha do top - De um toplaner para outro.</h4> <br>
-          <img src="../sources/logo1.png" alt="">
+  <div class="divLorem">
+    <div class="divH1">
+      <h1>
+        Estatísticas - Aproxime-se da Ilha!
+      </h1>
+    </div>
+  </div>
+  <section class="pro-produto">
+    <div class="glass">
+      <div class="divSaindoDaIlha">
+        <h1>Saindo da Ilha!</h1><br>
+        Confira a tier list oficial da toplane! <br>
+        O melhor jeito de ganhar mais partidas - é usando os melhores campeões! <br>
+        Por isso a ilha do top recomenda essa tier list para arrebentar nas filas ranqueadas! <br>
+
+      </div> <br>
+      <br>
+      <div class="imgLista">
+        <a href="    https://rankedboost.com/top-lane-tier-list/"><img src="../sources/lista.png" alt="" width="300px"
+            height="300px"></a>
       </div>
+    </div>
+    </div>
+  </section>
+
+
+  <div class="divChampsPopulares">
+    Conheça o campeão mais jogado da ilha: <br> <br>
+    <span id="spanNomeCampeaoPopular"> </span> - <span id="nroCampeaoPopular">NroMains</span> mains! <br>
+    Parabéns jogadores de <span id="spanNomeCampeaoPopular2"></span>!<br>
+
+    <span id="picCampeaoPopular"></span>
+
+  </div>
+  <div class="divVcSabia">
+    Voce Sabia? <br> <br>
+    <span id="spanPorcentagemOtps"></span>%
+     da ilha do top se considera otp! <br>
+    continuem masterizando esses campeões!
+   
+  </div> <br>
+
+
+
+  <div class="divGrafico1">
+    <canvas id="myChart">
+    </canvas>
+  </div>
+
+
+
+  <div class="footer">
+    <div class="footerContainer">
+      <h4>(2021) Ilha do top - De um toplaner para outro.</h4> <br>
+      <img src="../sources/logo1.png" alt="">
+    </div>
   </div>
 </body>
+
 </html>
+<script>
+  function carregarCampeaoPopular() {
+    var campeaoPopular;
+    var nomeCampeaoPopular;
+    var listaCampeoes = ["Aatrox", "Akali",
+      "Camille", "ChoGath", "Darius", "Dr. Mundo",
+      "Fiora", "Gangplank", "Garen", "Gnar",
+      "Gragas", "Gwen", "Heimerdinger", "Illaoi"
+      , "Irelia", "Jax", "Jayce", "Kayle", "Kennen", "Kled", "Malphite", "Maokai", "Mordekaiser", "Nasus", "Ornn", "Pantheon", "Poppy", "Quinn", "Renekton", "Rengar", "Rumble", "Ryze", "Sett",
+      "Shen",
+      "Singed",
+      "Sion"
+      , "Sylas",
+      "Teemo",
+      "Trundle",
+      "Tryndamere",
+      "Urgot",
+      "Vayne",
+      "Vladimir",
+      "Volibear",
+      "Wukong"
+      , "Yasuo", "Yone", "Yorick"];
+    var nroMains;
+
+
+    fetch("/leituras/campeaoPopular", {
+      method: "GET"
+    }).then(resposta => {
+
+      if (resposta.ok) {
+        resposta.json().then(json => {
+          sessionStorage.campeaoPopular = json.fkCampeao1;
+          campeaoPopular = sessionStorage.campeaoPopular;
+          nomeCampeaoPopular = campeaoPopular - 1;
+
+          sessionStorage.nroMains = json.nroMains;
+          nroMains = sessionStorage.nroMains;
+
+          spanNomeCampeaoPopular.innerHTML = listaCampeoes[nomeCampeaoPopular];
+          spanNomeCampeaoPopular2.innerHTML = listaCampeoes[nomeCampeaoPopular];
+          picCampeaoPopular.innerHTML = `<img src="../campeoes/${listaCampeoes[nomeCampeaoPopular]}.jpg" alt="">`;
+          nroCampeaoPopular.innerHTML = nroMains;
+        });
+
+      }
+
+    }
+    )
+  }
+  function graficosStats() {
+    var porcentagemOtps;
+    var playersOtp;
+    var totalPlayers;
+    var porcentagemNaoOtp;
+
+    // totalUsers - 100%
+    // otps - X%
+    // totalUsers * X = 100 * otps;
+    // X = (otps*100)/totalUsers;
+
+    fetch("/leituras/graficosStats", {
+      method: "GET"
+    }).then(resposta => {
+
+      if (resposta.ok) {
+        resposta.json().then(json => {
+          console.log("ok!");
+          sessionStorage.playersOtp = json.otp;
+          playersOtp = sessionStorage.playersOtp;
+
+          sessionStorage.totalPlayers = json.totalUsers;
+          totalPlayers = sessionStorage.totalPlayers;
+          porcentagemOtps = (playersOtp * 100) / totalPlayers;
+          porcentagemNaoOtp = 100 - porcentagemOtps;
+
+          spanPorcentagemOtps.innerHTML = porcentagemOtps;
+          console.log(porcentagemNaoOtp);
+
+          //colocando o grafico de  
+          var ctx = document.getElementById('myChart').getContext('2d');
+          var myChart = new Chart(ctx, {
+            type: 'pie',
+            data: {
+              labels: [
+                '% de Otps',
+                '% de Não otps'
+              ],
+              datasets: [{
+                label: 'Porcentagem de Otps e Não-Otps',
+                data: [porcentagemOtps, porcentagemNaoOtp],
+                backgroundColor: [
+                  'rgb(186, 117, 26)',
+                  'rgb(175, 186, 26)'
+                ]
+                
+                ,
+                hoverOffset: 0
+                
+              }]
+            },
+            options:
+             {
+              scales: {
+                y: {
+                  // beginAtZero: false
+                }
+              }
+            }
+          });
+
+        });
+
+      }
+
+    }
+    )
+  }
+</script>

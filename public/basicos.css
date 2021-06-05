@@ -14,12 +14,12 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100%;
-    opacity: 0.5;
+    /* opacity: 0.5; */
 
     
 }
 .divBannerSobre img{
-    max-width: 100%;
+  max-width: 100%;
   height: auto;
 
 }

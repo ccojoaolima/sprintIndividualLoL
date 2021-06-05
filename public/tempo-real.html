@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projeto IoT - Tempo Real</title>
+    <title>Meu perfil</title>
     <script type="text/javascript" src="funcoes.js"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap" rel="stylesheet">
@@ -13,9 +13,11 @@
     <link rel="stylesheet" href="home.css" />
     <link rel="stylesheet" href="basicos.css">
     <link rel="stylesheet" href="perfilUser.css">
+    <link rel="stylesheet" href="ilhaDark.css" />
+    <script src="mudarTema.js"></script>
 </head>
 
-<body >
+<body onload="loadiFrame()">
 
     <!--header inicio-->
     <header class="cabecalho">
@@ -30,20 +32,24 @@
             <li><a href="stats.html">Estatísticas</a></li>
             <li><a href="login.html">Login/Cadastro</a></li>
           </ul>
+          <div class="barraCabecalho">a</div>
         </div>
     </header>
+    <div class="barraCabecalho">
+      <button onclick="darkMode()">Alterar tema</button> 
+  </div>
+
     <div class="containerInfos">
         <div class="divUser" style="float: left;">
-            <img src="" alt="">
+            <!-- <img src="../campeoes/rumble.jpg" alt=""> -->
             <h3>Olá, <b id="b_usuario"></b></h3> <br>
-            <div class="imgUser">
+            <div id="imgUser">
                 
-                a
             </div>
            
         
             </div>
-           <div class="tableUser" style="float: right;">
+           <div class="tableUser" >
             <table style="width:100%">
                 <tr>
                   <th>Mains:</th>
@@ -68,6 +74,13 @@
               </table>
         
            </div>
+           <!-- Criando div do OPGG -->
+           
+    </div>
+    <div class="aglobaOPGG">
+      <div id="divOPGG">
+
+      </div>
     </div>
     
 
@@ -79,19 +92,5 @@
     let usuario;
     verificar_autenticacao();
 
-    // só mexer se quiser alterar o tempo de atualização
-    // ou se souber o que está fazendo!
-  
-
-    /*function sendData() {
-        var http = new XMLHttpRequest();
-        http.open('GET', 'http://localhost:9001/api/sendData', false);
-        http.send(null);
-    }
-
-    // Descomente abaixo se quiser inserir dados a cada X segundos  
-    setInterval(() => {
-        sendData();
-    }, 5000);*/
 
 </script>

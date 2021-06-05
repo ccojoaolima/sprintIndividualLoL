@@ -12,12 +12,14 @@
     <link rel="stylesheet" href="basicos.css">
     <link rel="stylesheet" href="discussao.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js%22%3E"></script>
+    <script src="mudarTema.js"></script>
+    <link rel="stylesheet" href="ilhaDark.css" />
 
-    <title>Document</title>
+    <title>Discussão pacífica!</title>
 </head>
 <!-- <body onload="carregarStats()"></body> -->
 
-<body>
+<body onload="carregarStats(), carregarStats1()">
 
     <header class="cabecalho">
         <a href="#" class="logo"><img src="../sources/logo1.png" alt=""></a>
@@ -33,20 +35,24 @@
           </ul>
         </div>
     </header>
+    <div class="barraCabecalho">
+      <button onclick="darkMode()">Alterar tema</button> 
+  </div>
+
     <div class="divEnglobatopico">
       <div class="topico">
         <img src="../sources/idahotb-icon.png" alt="">
-          Interaja com X pessoas <br>
+          Interaja com <span id="todosUsers1"></span> pessoas <br>
         já cadastradas na ilha!</div>
       <div class="topico">
         <img src="../campeoes/teemo.jpg" alt="">
-        E dessas - y% são jogadores <br>
+        E dessas - <span id="jogadoresDeTeemo1"></span> são jogadores <br>
       irritantes de teemo!</div>
-      <div class="topico">
+      <!-- <div class="topico">
         <div class="grafico">
           <canvas id="myChart"></canvas>
         </div> <br>
-        dolor</div>
+        dolor</div> -->
     </div>
 
    <div class="bannerDiscussao">
@@ -63,12 +69,8 @@
 
 
   <div class="divEnglobaDiscussoes">
-    <div class="disc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus nihil earum odio magni nesciunt dicta autem? Libero praesentium inventore rem cumque dolore voluptates dicta rerum, ex illum, ut exercitationem. Maxime?</div><br>
-    <div class="disc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos animi alias accusamus est ab facilis pariatur quisquam, beatae excepturi voluptatibus distinctio nulla asperiores? Magni porro nisi, explicabo quod numquam animi!</div> <br>
-    <div class="disc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium sint velit sequi quo porro totam blanditiis in laboriosam labore consequatur hic quasi, rem harum soluta fugit architecto autem officia iure!</div><br>
-    <div class="disc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus nihil earum odio magni nesciunt dicta autem? Libero praesentium inventore rem cumque dolore voluptates dicta rerum, ex illum, ut exercitationem. Maxime?</div><br>
-    <div class="disc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos animi alias accusamus est ab facilis pariatur quisquam, beatae excepturi voluptatibus distinctio nulla asperiores? Magni porro nisi, explicabo quod numquam animi!</div> <br>
-    <div class="disc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium sint velit sequi quo porro totam blanditiis in laboriosam labore consequatur hic quasi, rem harum soluta fugit architecto autem officia iure!</div><br>
+    <div class="disc">Poxa! Parece que essa ilha está deserta :(</div><br>
+    
   </div> 
     
 
@@ -83,48 +85,47 @@
 </html>
 
 <script>
-  var ctx = document.getElementById('myChart');
-var meuGrafico = new Chart(ctx, {
-  type: 'doughnut',
-  data: {
-  labels: [
-    'Red',
-    'Blue',
-    'Yellow'
-  ],
-  datasets: [{
-    label: 'My First Dataset',
-    data: [300, 50, 100],
-    backgroundColor: [
-      'rgb(255, 99, 132)',
-      'rgb(54, 162, 235)',
-      'rgb(255, 205, 86)'
-    ],
-    hoverOffset: 4
-  }]
-}
-})
+   var todosUsers;
+   
+  function carregarStats(){
+ 
+      fetch("/leituras/estatisticas", {
+          method: "GET"
+      }).then(resposta => {
 
+          if (resposta.ok) {
+          
+              resposta.json().then(json => {
 
-/*function carregarStats(){
-var mysql = require('mysql');
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'mfwhore3150',
-  database : 'dbIlha'
-});
-connection.connect();
+                  sessionStorage.statsAll = json.todosUsers;
+                  todosUsers = sessionStorage.statsAll;
+                  todosUsers1.innerHTML = todosUsers;
 
+  
+              });
 
-var sql = 'select count(idUsuario) from usuario'
-connection.query(sql, function(err, rows, fields) {
-  if (err) throw err;
-  console.log('Query result: ', rows);
-});
-}*/
+          } 
+  
+  }
+      )} 
 
+  function carregarStats1(){
 
+  var jogadoresDeTeemo;
+      fetch("/leituras/estatisticas2", {
+          method: "GET"
+      }).then(resposta => {
 
+          if (resposta.ok) {
+              resposta.json().then(json => {
+                  sessionStorage.statsTeemo = json.jogadoresDeTeemo;
+                  jogadoresDeTeemo = sessionStorage.statsTeemo;
+                  jogadoresDeTeemo1.innerHTML = jogadoresDeTeemo;
+              });
 
+          } 
+  
+  }
+      )} 
+  
 </script>
