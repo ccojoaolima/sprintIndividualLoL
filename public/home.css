@@ -86,7 +86,8 @@ body {
     justify-content: center;
     /*background-color: red;*/
     width: 100vh;
-    margin-left: 5%;
+    margin-left: 10%;
+
 }
 .divQues1{
     /*background-color: white;*/
@@ -145,6 +146,8 @@ body {
 /*fim banner*/
 .divDiscussao{
 margin-left: 10px;
+text-align: center;
+/* background-color: aquamarine; */
 }
 
 /*comeco imagem*/

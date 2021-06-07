@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="home.css" />
   <link rel="stylesheet" href="basicos.css">
   <link rel="stylesheet" href="stats.css">
+  <link rel="shortcut icon" href="../sources/sun.svg" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="graficosStats.js"></script>
   <script src="mudarTema.js"></script>
@@ -174,7 +175,7 @@
           porcentagemOtps = (playersOtp * 100) / totalPlayers;
           porcentagemNaoOtp = 100 - porcentagemOtps;
 
-          spanPorcentagemOtps.innerHTML = porcentagemOtps;
+          spanPorcentagemOtps.innerHTML = porcentagemOtps.toFixed(2);
           console.log(porcentagemNaoOtp);
 
           //colocando o grafico de  
